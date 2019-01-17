@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>杠精行为研究和内隐攻击性的相关研究</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="杠精行为和内隐攻击性的相关研究">
+    <meta name="author" content="网页制作：曲唱 杨曦    调查问卷：高文进 黄海舟    实验程序：孙梓芯">
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
+
+  
+
+    body {
+      padding-bottom: 40px;
+      color: #5a5a5a;
+    }
+
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;}
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: black;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+
+
+
+
+
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+  
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; 
+      overflow: hidden; 
+    }
+    .featurette-image {
+      margin-top: -120px; 
+    }
+
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+    }
+    </style>
+
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="ico/favicon.png">
+  </head>
+
+  <body>
+
+
+
+    <div class="navbar-wrapper">
+      
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#">实验研究</a>
+           
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="#">首页</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">详细信息 <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#a">实验目的</a></li>
+                    <li><a href="#b">数据分析</a></li>
+                    <li><a href="#c">结果预测</a></li>  
+					<li><a href="#d">高能提醒</a></li>
+                  </ul>
+                </li>
+                <li><a href="https://www.baidu.com">更多相关信息</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+
+
+
+
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="img/gj4.png" >
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>双标</h1>
+              <p class="lead">该词完整的说法是“双重标准”，该词通常用来吐槽那些用不同的标尺来衡量两个（及以上）物品（或事件）。或者对人有不同的评判标准，比如对自己和对别人的标准不一样（对别人要求高对自己低）的人。被称之为“双标狗”或者是“双标dog”。</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/gj2.png" >
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>杠精</h1>
+              <p class="lead">近段时间以来，人们在互联网上经常受到“杠精”的折磨。杠精是近期出现的网络流行语，指抬杠成瘾的一类群体，他们以“只有我一个人觉得……”“难道不是应该……”句式，逮谁杠谁，给他一个支点，他可以杠起整个地球……
+杠精行为，就是这样一种鸡蛋里挑骨头的无理挑刺社会现象。如今的各种社交软件及娱乐、视频软件，都存在不同程度的杠精污染。想和他讲理说清楚，他却以诡辩来纠缠不休，且乐于带节奏无脑喷，令人极度不适。</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/bl.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>白莲花</h1>
+              <p class="lead">绝大多数指一些无害、无辜、没心机的角色。在众人眼中她就是那一朵众女皆浊她独洁的白莲花，内心深处却阴险狡诈，骗取同情，达到险恶目的人，与外表的柔弱与内心不符，升级版的绿茶。与绿茶相比白莲花更容易骗取同性的信任，表面上和女生们维持着友好的关系。</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/zt.png" >
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>大猪蹄子</h1>
+              <p class="lead">通常是女生用来diss男生变心、说话不算数的常见用语，也可以用来吐槽男生不解风情、钢铁直男。该词可以通俗的理解为“男人没一个好东西”  。该词于2018年8月《延禧攻略》的播出之后火遍于网络。不过在此之前就有广为流传。当然也能被男孩用来反击女孩老是揪住毫无意义的点不放。</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/pb.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>实验内容简介</h1>
+              <p class="lead">我们选用内隐联想测验（Implicit Association Test，简称IAT）作为实验程序的核心，另外编制了一份关于许多网络热议话题的问卷，调查大家认为“DG辱华事件”和“吴亦凡freestyle事件”等事件中，网友的行为表现是什么样的，并收集大家对于还有大家在这两个事件中的行为，对一些生活现象进行排序或打分，不同类型题目随机出现。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+
+<div class="container-narrow">
+     <div class="jumbotron">
+        <h1>小伙汁</h1>
+        <p class="lead">要不要来做个实验？</p>
+     </div>
+</div>
+    <div class="row-fluid marketing">
+        <div class="span6">
+          <div class="thumbnail">
+             <img src="img/timg.png" >
+             <h3>激情实验</h3>
+             <p>“你怎么回事儿小老弟？”</p>
+             <a href="https://research.millisecond.com/weicong1203/implicitassociationtest.web">请先疯狂点我！！！！</a>
+          </div>        
+        </div>
+        <div class="span6">
+          <div class="thumbnail">
+          <img src="img/tim.png" >
+          <h3>刺激调查</h3>
+          <p>“如果我是十万个为什么你还爱我吗？”</p>
+          <a href="https://bnupsych.asia.qualtrics.com/jfe/form/SV_9ts07iFam59wwbr">然后还有我不能漏掉！</a>
+          </div>
+        </div>
+      </div>
+<div class="container-narrow">
+     <div class="jumbotron">
+        <h1>答应我</h1>
+        <p class="lead">走完上面的程序再往下看</p><img src="img/yl.png" >
+		<h1>杠精行为</h1>
+		<p class="lead">病名为杠：给我一个支点，我能杠飞地球……</p>
+     </div>
+</div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-right" src="img/symd.png">
+        <h2 class="featurette-heading">内隐攻击性&“杠精行为”<span class="muted">；相关关系</span></h2>        <a id="a">实验目的</a>
+        <p class="lead">我们意在研究杠精行为是否与内隐攻击性有关。
+假设它们之间具有相关关系，由于杠精是一类通过攻击别人获得快感的群体，因此我们假设内隐利他高的人可能杠精程度低，即内隐攻击性高的人可能杠精行为也比较多，杠精行为少的人可能内隐攻击性较低。</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-left" src="img/sjfx.png">
+        <h2 class="featurette-heading">杠精指数&内隐攻击性 <span class="muted">相关分析.</span></h2>     <a id="b">数据分析</a>
+        <p class="lead">在问卷调查中，先统计所有被试对于杠精行为的定义，并且给行为算出一个相应的杠精分数。然后再用这个分数来计算被试自己选择的行为得分，综合杠精程度自评，得出一个总的杠精指数。
+在内隐联想测验中，每个被试最后会得到一个内隐利他分数——D值。D 值为不相容与相容任务平均反应时之差。该研究中D值越大，代表利他与自我属性词汇的联结越强，内隐攻击性也就越低。</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-right" src="img/jgyc.png">
+        <h2 class="featurette-heading">相关关系 <span class="muted">“正比”</span></h2>        <a id="c">结果预测</a>
+        <p class="lead">内隐攻击性与杠精行为之间具有相关关系。内隐攻击性高的被试杠精行为也越多，而内隐攻击性低的被试杠精行为则较少。</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+
+      <div class="featurette">
+        <img class="featurette-image pull-left" src="img/qfgn.png">
+        <h2 class="featurette-heading">实验设计中的细节 <span class="muted">&原因</span></h2>     <a id="d">高能提醒</a>
+        <p class="lead">1.由于杠精一般不会承认自己这一特质，而攻击性也不易于从观察或问卷中得出，所以选用内隐联想测验（Implicit Association Test，简称IAT）的方式测试内隐攻击性。2.Greenwald等的社会知识结构模型认为,知识的基本单元是概念,概念按语义关系形成语义网络,联结强度反映出概念间联系的紧密程度。研究者通过考察个体在相容和不相容任务中，操作成绩(如反应时或者错误率)的差异,以IAT效应作为指标，来考究概念联结是否存在以及概念联结间的紧密程度，从而判断被试的内隐攻击性。
+根据实验，如果属于“自我”与“利他”词汇的联系较为紧密，即内隐攻击性较低。最后得出一个内隐利他成绩（D值），然后反过来判断内隐攻击性。3.内隐测量与自我报告式测量的区别是：能有效减少被试对反应的有意识控制，测量到不易表达出来的态度和认识。这对检测攻击性（非利他行为）这种带有负面含义的特质能较为准确。为了提升准确性，问卷采用单盲的形式。</p>
+      </div>
+
+      <hr class="featurette-divider">
+      <div class="footer">
+        <p>网页制作：曲唱 杨曦    调查问卷：高文进 黄海舟    实验程序：孙梓芯 </p>
+      </div>
+
+
+    </div>
+
+    <script src="js/jquery.js"></script>    
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+    <script src="js/holder/holder.js"></script>
+  </body>
+</html>
